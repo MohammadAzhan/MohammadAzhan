@@ -1,0 +1,13 @@
+class car:
+    def __init__(self , Brand , Model):
+        self.Brand = Brand
+        self.Model = Model
+
+
+My_car = car("Toyota" , "Corolla")
+print(My_car.Brand)
+print(My_car.Model)
+
+My_new_car = car("Tata" , "Safari")
+print(My_new_car.Brand)
+print(My_new_car.Model)
