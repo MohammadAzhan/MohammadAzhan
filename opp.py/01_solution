@@ -3,11 +3,21 @@ class car:
         self.Brand = Brand
         self.Model = Model
 
+    def full_name(self):
+        return f"{self.Brand} {self.Model}"
+    
 
-My_car = car("Toyota" , "Corolla")
-print(My_car.Brand)
-print(My_car.Model)
+class ElectricCar(car):
+    def __init__ (self , Brand , Model , Battery_size):
+        super() .__init__(Brand , Model)
+        self.Battery_size = Battery_size
 
-My_new_car = car("Tata" , "Safari")
-print(My_new_car.Brand)
-print(My_new_car.Model)
+My_Tesla = ElectricCar("Tesla" , "Model S" , "85KWh")
+print(My_Tesla.full_name())
+
+
+
+#my_car = car("Toyota" , "Corolla")
+#print(my_car.Brand)
+#print(my_car.Model)
+#print(my_car.full_name())
