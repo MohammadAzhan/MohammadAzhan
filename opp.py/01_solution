@@ -15,6 +15,13 @@ class car:
     def fuel_type(self):
         return "Petrol or Diesel"
     
+    def general_description(self):
+        return "they are a great means of transport"
+    
+    @property
+    def model(self):
+        return self.__model 
+
 
 class ElectricCar(car):
     def __init__ (self , Brand , Model , Battery_size):
@@ -25,17 +32,49 @@ class ElectricCar(car):
             return "Electric charge"
 
 My_Tesla = ElectricCar("Tesla" , "Model S" , "85KWh")
+
+print(isinstance(My_Tesla , car))
+print(isinstance(My_Tesla , ElectricCar))
+
+
 print(My_Tesla.full_name())
 print(My_Tesla.fuel_type())
 
 safari = car("Tata" , "safari")
+#my_car.model = "city"
 safariThree = car("Tata" , "Nexon") 
 print(safari.fuel_type())
 
 print(car.total_car)
+#print(my_car.model)
 
 
-#my_car = car("Toyota" , "Corolla")
-#print(my_car.Brand)
-#print(my_car.Model)
-#print(my_car.full_name())
+my_car = car("Toyota" , "Corolla")
+print(my_car.Brand)
+print(my_car.Model)
+print(my_car.full_name())
+print(my_car.general_description())
+
+
+
+
+
+
+class battery:
+    def battery_info(self):
+        return "A great battery that will be with you for a long time"
+    
+class Engine:
+    def engine_info(self):
+        return "Greatly powred V12 engine that will make you feel the real thrill of speed"
+
+class ElectricCarTwo (battery , Engine , car):
+    pass
+
+my_new_tesla = ElectricCarTwo("Tesla" , "Model S")
+print(my_new_tesla.battery_info())
+print(my_new_tesla.engine_info())
+
+
+
+
