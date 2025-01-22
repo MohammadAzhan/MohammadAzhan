@@ -1,0 +1,9 @@
+age = 26
+Day = "Wednesday"
+
+price = 12 if age >= 18 else 8
+
+if Day == "Wednesday":
+    price = price - 2
+
+    print("Ticket price for you is $", price)

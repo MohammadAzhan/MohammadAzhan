@@ -1,0 +1,10 @@
+password = "Securepasswordjattda"
+
+if len(password) < 6:
+    strength = "weak"
+if len(password) <= 10:
+    strength = "Medium"
+else:
+    strength = "STRONGGGGGGGGGG"
+
+print("Password strength is", strength)

@@ -1,0 +1,9 @@
+weather = "Sunny"
+
+if weather == "Sunny":
+    Activity = "Go for a walk"
+elif weather == "Rainy":  
+    Activity = "Read a book"
+elif weather == "snowy":
+    Activity = "Build a snowman"
+    print("Activity")
