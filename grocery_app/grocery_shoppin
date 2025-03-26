@@ -1,0 +1,77 @@
+import json
+
+
+grocery = [{"name": "Apple"}, {"name": "Banana"}, {"name": "Carrot"}]
+
+
+def save_data_helper(grocery):
+    with open('grocery.txt' , 'w') as file:
+        json.dump(grocery , file)
+
+
+    
+def list_all_items(grocery):
+    print("\n")
+    print() 
+    for index , grocery in enumerate(grocery , start=1):
+        print(f"{index} . {grocery['name']}")
+
+
+def add_items():
+    name = input("Enter grocery item name: ")
+    grocery.append({'name': name})
+    save_data_helper(grocery)
+
+def update_items():
+    list_all_items(grocery)
+index = int(input("Enter the grocery number to update"))
+if 1<= index <= len(grocery):
+    name = input("Enter the new item name: ")
+    grocery[index-1] = {'name': name}
+    save_data_helper(grocery)
+
+else:
+    print("Invalid item selected")
+
+def delete_items():
+    list_all_items(grocery)
+    input("Enter the video number to be deleted: ")
+    if 1<= index <= len(grocery):
+        del grocery[index-1]
+        save_data_helper(grocery)
+
+    else:
+        print("Invalid itemn selected")
+
+
+def main():
+    global grocery
+    grocery = []
+
+while True:
+    print("\n Grocery Shoppin | choose an option")
+    print("1.List all grocery items: ")
+    print("2.Add new grocery items: ")
+    print("3.update grocery items: ")
+    print("4.Delete grocery items: ")
+    print("5.Exit the app: ")
+    choice = input("Enter your choice")
+    print(grocery)
+
+    match choice:
+        case '1': 
+            list_all_items(grocery)
+        
+        case '2': 
+            add_items(grocery)
+        case '3':
+            update_items(grocery)
+        case'4':
+            delete_items(grocery)
+        case '5':
+            break
+
+
+
+if __name__ == "__main__":
+    main()
